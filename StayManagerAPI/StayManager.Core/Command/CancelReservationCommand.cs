@@ -26,7 +26,7 @@ namespace StayManager.Core.Command
             Console.WriteLine($"Reservation {_reservationId} has been cancelled.");
 
             // Notificar todos os usuários conectados via WebSocket
-            await _notificationService.NotifyAllAsync($"Reservation {_reservationId} has been cancelled.");
+            await _notificationService.NotifyAllAsync($"Reserva ID {_reservationId} foi cancelada.");
         }
     }
 }

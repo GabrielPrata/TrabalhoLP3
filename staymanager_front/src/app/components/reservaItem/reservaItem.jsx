@@ -32,7 +32,7 @@ const ReservaItem = ({ id, data, inicial, final, cliente, quarto, total, servico
                     Total: {total}
                 </Typography>
                 <Typography className='mt-5'>
-                    Serviços Extra: {servicos ? servicos : "Não aplica"}
+                    Serviços Extra: {servicos != "null" ? servicos : "Não aplica"}
                 </Typography>
                 <Button variant="contained" size="large" className='mt-5' fullWidth={true} color="error"  onClick={handleDelete} >
                     Cancelar
