@@ -1,0 +1,13 @@
+
+
+CREATE TABLE [dbo].[Reserva] (
+    [id]             INT             IDENTITY (1, 1) NOT NULL,
+    [dataReserva]    DATE            NOT NULL,
+    [periodoInicial] DATE            NOT NULL,
+    [periodoFinal]   DATE            NOT NULL,
+    [nomeCliente]    NVARCHAR (50)   NOT NULL,
+    [tipoQuarto]     NVARCHAR (50)   NOT NULL,
+    [valorTotal]     DECIMAL (10, 2) NOT NULL,
+    [servicosExtras] NVARCHAR (70)   NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
