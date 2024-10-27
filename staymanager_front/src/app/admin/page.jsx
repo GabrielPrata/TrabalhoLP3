@@ -19,6 +19,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { DatePicker } from "@nextui-org/react";
 import ReservaItem from '../components/reservaItem/reservaItem';
+import Notifications from '../utils/notifications';
 
 
 const Page = () => {
@@ -83,6 +84,7 @@ const Page = () => {
     return (
         <Container className="flex p-12 min-h-screen flex-col items-center flex-1 justify-center">
             <Box className='flex flex-col items-center justify-center bg-gray-700 bg-opacity-50 p-10 rounded-lg'>
+                <Notifications />
                 <Typography variant="h2" className='mt-5'>
                     StayManager
                 </Typography>

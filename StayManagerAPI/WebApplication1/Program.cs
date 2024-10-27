@@ -12,8 +12,17 @@ namespace WebApplication1
             var builder = WebApplication.CreateBuilder(args);
             var sqlConnection = builder.Configuration["AppConfiguration:ConnectionString"];
 
+            builder.Services.AddSingleton<WebSocketNotificationService>();
+
+
             // Add services to the container.
-            builder.Services.AddScoped<IFazerReservaService>(provider => new FazerReservaService(sqlConnection));
+            //builder.Services.AddScoped<IFazerReservaService>(provider => new FazerReservaService(sqlConnection));
+            builder.Services.AddTransient<IFazerReservaService>(provider =>
+            {
+                var notificationService = provider.GetRequiredService<WebSocketNotificationService>();
+                var strConnection = sqlConnection;
+                return new FazerReservaService(strConnection, notificationService);
+            });
 
             builder.Services.AddCors(options =>
             {
@@ -46,6 +55,21 @@ namespace WebApplication1
 
             app.UseHttpsRedirection();
             app.UseCors(MyAllowSpecificOrigins);
+
+            app.UseWebSockets();
+            app.Map("/ws", async (HttpContext context, WebSocketNotificationService notificationService) =>
+            {
+                if (context.WebSockets.IsWebSocketRequest)
+                {
+                    var webSocket = await context.WebSockets.AcceptWebSocketAsync();
+                    await notificationService.HandleWebSocketAsync(webSocket);
+                }
+                else
+                {
+                    context.Response.StatusCode = 400;
+                }
+            });
+
             app.UseAuthorization();
 
 

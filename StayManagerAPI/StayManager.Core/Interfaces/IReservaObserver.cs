@@ -2,8 +2,8 @@
 
 namespace StayManager.Core.Interfaces
 {
-    internal interface IReservaObserver
+    public interface IReservaObserver
     {
-        void Update(ReservaModel reserva);
+        void Update(string message);
     }
 }

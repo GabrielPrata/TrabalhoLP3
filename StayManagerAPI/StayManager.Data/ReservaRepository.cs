@@ -23,7 +23,7 @@ namespace StayManager.Data
 
         public async Task SalvarReserva(ReservaModel data)
         {
-            const string query = @"INSERT INTO RESERVA(DATARESERVA, PERIODOINICIAL, PERIODOFINAL, TIPOQUARTO, NOMECLIENTE, VALORTOTAL, SERVICOSADICIONAIS) 
+            const string query = @"INSERT INTO RESERVA(DATARESERVA, PERIODOINICIAL, PERIODOFINAL, TIPOQUARTO, NOMECLIENTE, VALORTOTAL, SERVICOSEXTRAS) 
                            VALUES(@DataReserva, @PeriodoInicial, @PeriodoFinal, @TipoQuarto, @NomeCliente, @ValorTotal, @ServicosAdicionais)";
             try
             {
