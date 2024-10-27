@@ -1,0 +1,4 @@
+# Ignore Node modules and .env files globally
+**/node_modules
+**/.env
+**/.env.local
