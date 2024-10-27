@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using StayManager.Core.FactoryMethod;
+﻿using StayManager.Core.FactoryMethod;
 using StayManager.Core.Interfaces;
 using StayManager.Core.Mappers;
 using StayManager.Data;

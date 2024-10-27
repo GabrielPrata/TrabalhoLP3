@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StayManager.Core.Interfaces;
-using StayManager.Core.Services;
 using StayManager.Data.DTO;
 
 namespace StayManager.API.Controllers

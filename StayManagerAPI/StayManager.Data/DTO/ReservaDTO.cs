@@ -1,7 +1,4 @@
-﻿
-using StayManager.Data.Models;
-
-namespace StayManager.Data.DTO
+﻿namespace StayManager.Data.DTO
 {
     public class ReservaDTO
     {

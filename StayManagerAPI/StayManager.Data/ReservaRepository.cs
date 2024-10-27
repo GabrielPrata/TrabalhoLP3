@@ -1,9 +1,7 @@
 ﻿using Dapper;
-using Microsoft.AspNetCore.Mvc;
 using StayManager.Data.DTO;
 using StayManager.Data.Models;
 using System.Data.SqlClient;
-using System.Threading.Tasks;
 
 namespace StayManager.Data
 {
